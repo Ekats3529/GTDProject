@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <item name="my_profile_et_mobile" type="id" />
+    <item name="imageView" type="id" />
+    <item name="companyTextView" type="id" />
+    <item name="nameTextView" type="id" />
 </resources>

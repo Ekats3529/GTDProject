@@ -3,19 +3,19 @@ package com.example.gtdproject.firebase
 import android.app.Activity
 import android.util.Log
 import android.widget.Toast
-import com.example.gtdproject.activities.MainActivity
-import com.example.gtdproject.activities.MyProfileActivity
-import com.example.gtdproject.activities.SignInActivity
-import com.example.gtdproject.activities.SignUpActivity
+import com.example.gtdproject.activities.*
 import com.example.gtdproject.models.User
+import com.example.gtdproject.models.Task
 import com.example.gtdproject.utils.Constants
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.SetOptions
+import com.google.firebase.ktx.Firebase
 
 class FirestoreClass {
 
     private val mFirestore = FirebaseFirestore.getInstance()
+
 
     fun registerUser(activity: SignUpActivity, userInfo: User){
         mFirestore.collection(Constants.USERS)
@@ -26,6 +26,19 @@ class FirestoreClass {
             }.addOnFailureListener{
                 e->
                 Log.e(activity.javaClass.simpleName, "Ошибка")
+            }
+    }
+
+    fun createTask(activity: QuizQuestionsActivity, taskInfo: Task){
+
+        mFirestore.collection(Constants.TASKS)
+            .document()
+            .set(taskInfo, SetOptions.merge())
+            .addOnSuccessListener {
+                //Toast.makeText(activity,"Task created successfully", Toast.LENGTH_SHORT).show()
+                //activity.taskCreatedSuccessfully() //show toast to the user
+            }.addOnFailureListener{
+                //activity.hideProgressDialog()
             }
     }
 
@@ -73,13 +86,43 @@ class FirestoreClass {
             }
     }
 
+    fun getTasksList(activity: ShowTasksActivity, status: String){
+
+        mFirestore.collection(Constants.TASKS)
+            .whereEqualTo(Constants.USERID, getCurrentUserID())
+            .whereEqualTo(Constants.STATUS, status)
+            .get()
+            .addOnSuccessListener {
+                document ->
+                Log.e("GetTaskList", document.toString())
+                val tasksList : ArrayList<HashMap<String, Any>> = ArrayList()
+                for (i in  document.documents){
+                    val task = i.toObject(Task::class.java)!!
+                    task.id = i.id
+                    val taskhm: HashMap<String, Any> = HashMap()
+                    taskhm["title"] = task.title
+                    taskhm["entry"] = task.entry
+                    tasksList.add(taskhm)
+                }
+                activity.populateTasksToUI(tasksList)
+            }.addOnFailureListener {
+
+                //activity.hideProgressDialog()
+            }
+    }
+
+
     fun getCurrentUserID(): String{
 
-        var currentUser = FirebaseAuth.getInstance().currentUser
+        val currentUser = FirebaseAuth.getInstance().currentUser
         var currentUserID = ""
         if (currentUser != null){
             currentUserID = currentUser.uid
         }
         return currentUserID
     }
+
+
+
+
 }

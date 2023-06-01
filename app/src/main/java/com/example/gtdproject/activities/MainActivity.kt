@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.MenuItem
+import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
@@ -30,6 +31,12 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
         val nav_view = findViewById<NavigationView>(R.id.nav_view)
 
         nav_view.setNavigationItemSelectedListener(this)
+
+        val btn_create_task = findViewById<Button>(R.id.btn_create_task)
+
+        btn_create_task.setOnClickListener {
+            startActivity(Intent(this, CreateTaskActivity::class.java))
+        }
 
         FirestoreClass().loadUserData(this)
     }
@@ -84,8 +91,6 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
         val tv_username = findViewById<TextView>(R.id.tv_username)
         tv_username.text = user.name
 
-
-
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -116,6 +121,46 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
                 startActivity(intent)
                 finish()
+            }
+            R.id.nav_inbox ->{
+                val intent = Intent(this, ShowTasksActivity::class.java)
+                    .putExtra("type", Constants.INBOX)
+                startActivity(intent)
+            }
+            R.id.nav_notes ->{
+                val intent = Intent(this, ShowTasksActivity::class.java)
+                    .putExtra("type", Constants.NOTES)
+                startActivity(intent)
+            }
+            R.id.nav_waiting ->{
+                val intent = Intent(this, ShowTasksActivity::class.java)
+                    .putExtra("type", Constants.WAITING)
+                startActivity(intent)
+            }
+            R.id.nav_someday ->{
+                val intent = Intent(this, ShowTasksActivity::class.java)
+                    .putExtra("type", Constants.SOMEDAY)
+                startActivity(intent)
+            }
+            R.id.nav_projects ->{
+                val intent = Intent(this, ShowTasksActivity::class.java)
+                    .putExtra("type", Constants.PROJECTS)
+                startActivity(intent)
+            }
+            R.id.nav_cur_actions ->{
+                val intent = Intent(this, ShowTasksActivity::class.java)
+                    .putExtra("type", Constants.CUR_ACTIONS)
+                startActivity(intent)
+            }
+            R.id.nav_done ->{
+                val intent = Intent(this, ShowTasksActivity::class.java)
+                    .putExtra("type", Constants.DONE)
+                startActivity(intent)
+            }
+            R.id.nav_trash ->{
+                val intent = Intent(this, ShowTasksActivity::class.java)
+                    .putExtra("type", Constants.TRASH)
+                startActivity(intent)
             }
 
         }

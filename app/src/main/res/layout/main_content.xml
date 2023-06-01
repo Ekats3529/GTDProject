@@ -69,7 +69,7 @@
                 android:textSize="@dimen/description_main_act_text_size" />
 
             <Button
-                android:id="@+id/btn_create_note"
+                android:id="@+id/btn_create_task"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"

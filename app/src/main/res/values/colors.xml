@@ -16,4 +16,10 @@
     <color name="secondary_text_color">#7A8089</color>
 
     <color name="snackbar_e_color">#A61E07</color>
+
+    <color name="text_quiz_question">#363A43</color>
+
+    <color name="quiz_bg">#BECFF6</color>
+
+    <color name="item_color_gray">#56565A</color>
 </resources>

@@ -24,6 +24,7 @@
     <string name="please_click_again_to_exit">Нажмите еще раз, чтобы выйти</string>
     <string name="please_wait">Подождите…</string>
 
+
     <!-- Navigation Header screen -->
 
     <string name="nav_my_profile">Мой аккаунт</string>
@@ -47,10 +48,15 @@
     <string name="board_name"> Имя доски</string>
 
 
-    <string name="description_main_act">Создать новую заметку во Входящие материалы</string>
+    <string name="description_main_act">Создать новую заметку</string>
 
 
     <string name="btn_create_note">Добавить заметку</string>
+    <string name="task_title">Название заметки</string>
+    <string name="task_entry">Текст</string>
+
+    <string name="yes">Да</string>
+    <string name="no">Нет</string>
 
 
 </resources>
