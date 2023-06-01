@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "107855660799",
+    "project_id": "gtd-project-21c9f",
+    "storage_bucket": "gtd-project-21c9f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:107855660799:android:b74663ae335e04a372aeca",
+        "android_client_info": {
+          "package_name": "com.example.gtdproject"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBKirrfDXLpU0SGwVopbzJSFRh4l_CDPZk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

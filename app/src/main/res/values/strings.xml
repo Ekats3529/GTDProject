@@ -1,0 +1,56 @@
+<resources>
+    <string name="app_name">GTD</string>
+
+    <!-- Intro screen -->
+
+    <string name="image_contentDescription">image</string>
+    <string name="get_started_test">Планируйте с нами!</string>
+    <string name="intro_text_description">Присоединяйтесь</string>
+    <string name="sign_in">Войти</string>
+    <string name="sign_up">Регистрация</string>
+
+    <!-- Sign Up screen -->
+
+    <string name="sign_up_description_text">Введите ваше имя, email и придумайте пароль</string>
+    <string name="name">Имя</string>
+    <string name="email">Email</string>
+    <string name="password">Пароль</string>
+    <string name="to_sign_up">Зарегистрироваться</string>
+    <string name="back_text">Назад</string>
+
+
+    <!-- ProgressBar screen -->
+
+    <string name="please_click_again_to_exit">Нажмите еще раз, чтобы выйти</string>
+    <string name="please_wait">Подождите…</string>
+
+    <!-- Navigation Header screen -->
+
+    <string name="nav_my_profile">Мой аккаунт</string>
+    <string name="nav_sign_out">Выйти из аккаунта</string>
+    <string name="nav_inbox">Входящие материалы</string>
+    <string name="nav_notes">Заметки</string>
+    <string name="nav_waiting">Ожидание</string>
+    <string name="nav_someday">Когда-нибудь потом</string>
+    <string name="nav_projects">Проекты</string>
+    <string name="nav_cur_actions">Текущие действия</string>
+    <string name="nav_done">Сделано</string>
+    <string name="nav_trash">Мусор</string>
+
+    <!-- My Profile screen -->
+    <string name="mobile">Телефон</string>
+    <string name="update">Обновить</string>
+    <string name="my_profile_title">Мой аккаунт</string>
+
+    <string name="create_board_title"> Создать доску</string>
+    <string name="create"> Создать</string>
+    <string name="board_name"> Имя доски</string>
+
+
+    <string name="description_main_act">Создать новую заметку во Входящие материалы</string>
+
+
+    <string name="btn_create_note">Добавить заметку</string>
+
+
+</resources>
